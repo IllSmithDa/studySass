@@ -1,0 +1,53 @@
+/*  You can see that plain css works just fine for scss  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ff8b62;
+  color: #e6e6e6;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.main {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  /* uses '&' in place of 'main' for the nested class name */
+}
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+}
+.main div {
+  width: 50%;
+}
+@media (max-width: 800px) {
+  .main div {
+    width: 100%;
+  }
+}
+.main .main__paragraph, .main .main__paragraph2 {
+  font-weight: 400;
+}
+.main .main__paragraph:hover, .main .main__paragraph2:hover {
+  color: pink;
+  cursor: pointer;
+}
+.main .main__paragraph2:hover {
+  color: #FF652F;
+}
+
+span {
+  font-weight: 700;
+}/*# sourceMappingURL=main.css.map */

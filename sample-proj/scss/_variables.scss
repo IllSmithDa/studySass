@@ -1,0 +1,13 @@
+$primary-color: #272727;
+$accent-color: #FF652F;
+$text-color: #FFF;
+$mobile: 800px;
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
+);
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}

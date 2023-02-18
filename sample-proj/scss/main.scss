@@ -1,0 +1,74 @@
+/*  You can see that plain css works just fine for scss  */
+@import './resets';
+@import './variables';
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@mixin xMargins($flexVal) {
+  margin-left: $flexVal;
+  margin-right: $flexVal;
+}
+
+@mixin theme($light-theme: true) {
+  @if ($light-theme) {
+    background: lighten($accent-color, 10%);
+    color: darken($text-color, 10%);
+  } @else {
+    background: darken($accent-color, 10%);
+    color: lighten($text-color, 10%);
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+
+body {
+  @include theme($light-theme: true)
+}
+
+h1 {
+  font-weight: map-get($font-weights, regular);
+}
+
+.main {
+  width: 80%;
+  @include flexCenter;
+  @include xMargins(auto);
+  /* uses '&' in place of 'main' for the nested class name */
+  @include mobile {
+    flex-direction: column;
+  }
+  div {
+    width: 80%-30%;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  #{&}__paragraph {
+    // font-weight: 400;
+    font-weight: map-get($font-weights, regular);
+    &:hover {
+      color: pink;
+      cursor: pointer;
+    }
+  }
+  #{&}__paragraph2 {
+    @extend .main__paragraph;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+span {
+  font-weight: weight(bold);
+}

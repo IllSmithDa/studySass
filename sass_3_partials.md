@@ -28,3 +28,28 @@
 
   7. One use case for partials is that you can store all your variables in a partial and import them to whatever files you need without channging the syntax of the scss files. Just make sure 
   to import the partial files and you can use the varaibles as normal
+
+  8. Consider creating a variables partials like this 
+
+    e.g
+    $primary-color: #272727;
+    $accent-color: #FF652F;
+    $text-color: #FFF;
+    $mobile: 800px;
+    $font-weights: (
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    );
+
+      a. in the _variables.scss file
+
+    e.g
+    @import './variables'
+    p {
+      color: $accent-color;
+    }
+      a. imported to another file to be used and referenced to 
+
+  
+

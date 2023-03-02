@@ -5,14 +5,16 @@
   2. Here is a function that takes weight-name and searches the map for the corresponding value 
   and returns it
 
-  e.g @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name);
-  }
+    e.g 
+    @function weight($weight-name) {
+      @return map-get($font-weights, $weight-name);
+    }
 
   3. You can call the function like you would a regular javascript function 
 
-  e.g 
-  p {
-    /* weight() function is called and returns the map value */
-    font-weight: weight(bold);
-  }
+    e.g 
+    p {
+      font-weight: weight(bold);
+    }
+  
+      a. weight() function is called and is used a key to return the corresponding value

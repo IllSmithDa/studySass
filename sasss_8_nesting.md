@@ -11,6 +11,8 @@
       color: #222222;
     }
 
+      a. standard nesting in css
+
   2. Instead of adding a new set of definitions and brackets simply place the p tag inside of the main directly. Its makes the files more compact and wordy
 
     e.g 
@@ -21,6 +23,8 @@
         color: #222222;
       }
     }
+    
+      a. sass nesting which is done on the same defintion as main
 
   3. You can also nest other classes as well assuming you have nested elements with a class in them 
 
@@ -38,11 +42,11 @@
     e.g 
     .main {
       width: 80%;
-      
+
       /* uses '#{&}' in place of 'main' for the nested class name */
       #{&}__paragraph {
         font-weight: 700;
-  
+
         /* '&:' used to indicate a different state for css which is hover */
         &:hover {
           color: pink
